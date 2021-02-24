@@ -29,8 +29,16 @@ Código:
 
 main()
 {
+
+
+
     float L,G=3.88,A=3.18,g,a;
     char C;
+
+    char opcao = 's';
+
+    while(opcao == 's' || opcao == 'S')
+        {
 
     printf("DIGITE (G) PARA GASOLINA OU (A) PARA ALCOOL: ");
     printf("\n");
@@ -64,11 +72,13 @@ main()
                 L = G*L;        /*MULTIPLICA O VALOR DA GASOLINA PELOS LITROS DESEJADOS*/
                     if(g==1)
                     {
-                        printf("%.2f LITRO DE GASOLINA COM 4%% DE DESCONTO = %.2f",g,L);
+                        printf("%.2f LITRO DE GASOLINA COM 4%% DE DESCONTO = %.2f\n\n",g,L);
+
                     }
                         else
                         {
-                            printf("%.2f LITROS DE GASOLINA COM 4%% DE DESCONTO = %.2f",g,L);
+                            printf("%.2f LITROS DE GASOLINA COM 4%% DE DESCONTO = %.2f\n\n",g,L);
+
                         }
             }
                 else if(L>20)
@@ -77,7 +87,7 @@ main()
                     G *= 1-0.06;
                     L = G*L;
 
-                    printf("%.2f LITROS DE GASOLINA COM 6%% DE DESCONTO = %.2f",g,L);
+                    printf("%.2f LITROS DE GASOLINA COM 6%% DE DESCONTO = %.2f\n\n",g,L);
                 }
     }
         else if (C=='a')
@@ -87,7 +97,7 @@ main()
             scanf("%f",&L);
             if(L<=0)
             {
-                printf("DIGITE UMA QUANTIDADE DE LITROS MAIOR QUE 0!!\n");
+                printf("DIGITE UMA QUANTIDADE DE LITROS MAIOR QUE 0!!\n\n");
             }
         }while(L<=0);
 
@@ -98,11 +108,11 @@ main()
                 L = A*L;
                     if(a==1)
                     {
-                        printf("%.2f LITRO DE ALCOOL COM 4%% DE DESCONTO = %.2f",a,L);
+                        printf("%.2f LITRO DE ALCOOL COM 4%% DE DESCONTO = %.2f\n\n",a,L);
                     }
                         else
                         {
-                            printf("%.2f LITROS DE ALCOOL COM 4%% DE DESCONTO = %.2f",a,L);
+                            printf("%.2f LITROS DE ALCOOL COM 4%% DE DESCONTO = %.2f\n\n",a,L);
                         }
             }
                 else if(L>20)
@@ -111,10 +121,18 @@ main()
                     A *= 1-0.05;
                     L = A*L;
 
-                    printf("%.2f LITROS DE ALCOOL COM 5%% DE DESCONTO = %.2f",a,L);
+                    printf("%.2f LITROS DE ALCOOL COM 5%% DE DESCONTO = %.2f\n\n",a,L);
                 }
+
         }
+        printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+
+    }
+
 }
+
+
 
 #endif ex1
 _________________________________________________________________________________________
@@ -134,6 +152,11 @@ main()
 {
     double A=50,B=A/2;
     char c;
+
+      char opcao = 's';
+
+        while(opcao == 's' || opcao == 'S')
+        {
 
     printf("DIGITE > PARA MAIOR\nDIGITE < PARA MENOR\nDIGITE = PARA IGUAL\n");
     printf("\n");
@@ -173,19 +196,27 @@ main()
                     printf("\nSEU NUMERO = %.0lf",A);
                 }
 
+
+
     }while(c != '=');
+     printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+        }
+
 }
+
 
 #endif ex2
 _________________________________________________________________________________________
 
-3 - Resecreva o programa do execicio anterior agora utilizando o comando switch.
+3 - Reescreva o programa do execicio anterior agora utilizando o comando switch.
     Conte o n. de tentativas e imprima o resultado no video.
 
 
 Código:
 
 #ifdef ex3
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -194,6 +225,10 @@ main()
 {
     double A=50,B=A/2,C=0;
     char opc;
+    char opcao = 's';
+
+        while(opcao == 's' || opcao == 'S')
+        {
 
         printf("PENSE EM UM NUMERO ENTRE 1 E 99!!\n");
         printf("DIGITE > PARA MAIOR\nDIGITE < PARA MENOR\nDIGITE = PARA IGUAL\n");
@@ -254,7 +289,11 @@ main()
             printf("OPCAO INVALIDA!!\n");
         }
     }while(opc!='=');
+     printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
 }
+}
+
 
 #endif ex3
 _________________________________________________________________________________________
@@ -276,7 +315,10 @@ Código:
 main()
 {
     int H,M,S,HI,MI,SI,HF,MF,SF,A,B;
+    char opcao = 's';
 
+        while(opcao == 's' || opcao == 'S')
+        {
     do{
         do{
             printf("DIGITE A HORA INICIO DA LIGACAO: ");
@@ -366,7 +408,11 @@ main()
                             }
                 }
     }while(A>B);
+         printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
 }
+}
+
 
 #endif ex4
 _________________________________________________________________________________________
@@ -385,7 +431,10 @@ Código:
 main()
 {
     int A,B=0,C=0;
+    char opcao = 's';
 
+        while(opcao == 's' || opcao == 'S')
+        {
     do{
         printf("DIGITE UM NUMERO: ");
         scanf("%d",&A);
@@ -398,7 +447,12 @@ main()
     }while(A>0);
 
     B = B/C;
+
+    system("clear||cls");//comando para limpar a tela.
     printf("MEDIA DOS %d NUMEROS DIGITADOS = %d",C,B);
+    printf("\nTecle 's' se deseja continuar\n\n");
+    opcao = getch();
+}
 }
 
 #endif ex5
