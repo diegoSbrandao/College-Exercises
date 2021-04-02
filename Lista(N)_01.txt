@@ -127,6 +127,7 @@ main()
 
     int x,y,multi;
 
+
     do
     {
         printf("Digite dois números: \n");
@@ -161,8 +162,9 @@ main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int x,y,divi;
-
+    int x,y;
+    float divi;
+	
     do
     {
         printf("Digite dois números: \n");
@@ -179,7 +181,7 @@ main()
 
     divi = y/x; //y = dividendo e x=divisor
 
-    printf("A divisão dos números digitados %d e %d é igual: %d\n ",x,y,divi);
+    printf("A divisão dos números digitados %d e %d é igual: %f\n ",x,y,divi);
     system("pause"); // pausa o programa
 
 }
@@ -327,8 +329,9 @@ main()
 
     setlocale(LC_ALL, "Portuguese");
 
-    int  salar,novoSalar;
-    double reaj;
+    int  salar;
+    double reaj,novoSalar;
+
     do{
     printf("Digite seu salário R$: \n");
     scanf("%d", &salar);
@@ -342,19 +345,19 @@ main()
    if(salar<800){
     reaj = 0.15;
     novoSalar = salar * reaj + salar;
-    printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+    printf("Seu antigo salário era %d agora seu novo salário é %f",salar,novoSalar);
    }
 
    else if(salar>=800 && salar<=1000){
     reaj = 0.10;
     novoSalar = salar * reaj + salar;
-   printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+   printf("Seu antigo salário era %d agora seu novo salário é %f",salar,novoSalar);
    }
 
-   else if(salar>1000){
+   else{
     reaj = 0.05;
     novoSalar = salar * reaj + salar;
-   printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+   printf("Seu antigo salário era %d agora seu novo salário é %f",salar,novoSalar);
    }
 
 }
@@ -409,7 +412,8 @@ main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int a,b,c,d,media;
+    int a,b,c,d,
+    float media;
 
         do{
 
@@ -435,10 +439,10 @@ main()
      media = (a+b+c+d) / 4;
 
      if(media>=5){
-        printf("Você foi aprovado sua média é: %d\n",media);
+        printf("Você foi aprovado sua média é: %f\n",media);
      }
      else{
-        printf("Você foi reprovado sua média é: %d\n",media);
+        printf("Você foi reprovado sua média é: %f\n",media);
      }
 
 }

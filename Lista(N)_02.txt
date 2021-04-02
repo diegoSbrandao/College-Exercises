@@ -144,9 +144,14 @@ main()
     setlocale(LC_ALL, "Portuguese");
 
     int  x;
+	
+   do{
 
     printf("Digite um número: \n");
     scanf("%d",&x);
+
+
+   }while(x==0);	
 
     if (x%2==0)
     {
@@ -155,7 +160,7 @@ main()
     }
     else
     {
-        printf("O número digitado, %ld é ímpar.\n",x);
+        printf("O número digitado, %d é ímpar.\n",x);
 
     }
 }
@@ -219,17 +224,25 @@ main()
 
     setlocale(LC_ALL, "Portuguese");
 
-    int  x,y,degraus;
-
-    printf("Digite a altura do degrau em cm:\n");
+    int  x,y,deg;
+    degraus float;
+	
+    do {    printf("Digite a altura do degrau em cm:\n");
     scanf("%d",&x);
 
     printf("Digite qual altura deseja subir em metros:\n");
     scanf("%d",&y);
+    }while(x<=0 || y<=0 || x>y*100);
 
-    degraus =  y*100/x;
+    degraus =  y*100/x; 
+    deg = degraus;
+	
+   if(deg==degraus){	
     printf("A quantidade de degraus que terá que subir será: %d.",degraus);
-
+}
+   else{
+   printf("A quantidade de degraus que terá que subir será: %d.",deg+1);
+   }
 }
 #endif ex6
 
