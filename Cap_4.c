@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include<conio.h>
-#define ex03
+#define ex01
 
 
 #ifdef ex01
@@ -82,36 +82,38 @@ float flutuante[3];
 long longo[3];
 double dobro[3];
 unsigned semsinal[3];
-int main() {
+int main()
+{
 
     setlocale(LC_ALL, "Portuguese");
     char opcao = 's';
-    while(opcao == 's' || opcao == 'S') {
-    int i;
-
-    for(i=0; i<3; i++)
+    while(opcao == 's' || opcao == 'S')
     {
-        printf("\nDigite um valor para INT: ");
-        scanf("%d",&inteiro[i]);
-        printf("\nDigite um valor para LONG: ");
-        scanf("%ld",&longo[i]);
-        printf("\nDigite um valor para UNSIGNED: ");
-        scanf("%u",&semsinal[i]);
-        printf("\nDigite um valor para FLOAT: ");
-        scanf("%f",&flutuante[i]);
-        printf("\nDigite um valor para DOUBLE: ");
-        scanf("%lf",&dobro[i]);
-    }
-    printf("\n        10        20        30        40        50\n");
-    printf("12345678901234567890123456789012345678901234567890\n");
-    for(i=0; i<3; i++)
-    {
-    printf("  %d                  %d                  %d\n",inteiro[i],longo[i],semsinal[i]);
-    printf("            %.2f               %.2lf\n",flutuante[i],dobro[i]);
-    }
+        int i;
 
-    printf("\nTecle 's' se deseja continuar\n\n");
-    opcao = getch();
+        for(i=0; i<3; i++)
+        {
+            printf("\nDigite um valor para INT: ");
+            scanf("%d",&inteiro[i]);
+            printf("\nDigite um valor para LONG: ");
+            scanf("%ld",&longo[i]);
+            printf("\nDigite um valor para UNSIGNED: ");
+            scanf("%u",&semsinal[i]);
+            printf("\nDigite um valor para FLOAT: ");
+            scanf("%f",&flutuante[i]);
+            printf("\nDigite um valor para DOUBLE: ");
+            scanf("%lf",&dobro[i]);
+        }
+        printf("\n        10        20        30        40        50\n");
+        printf("12345678901234567890123456789012345678901234567890\n");
+        for(i=0; i<3; i++)
+        {
+            printf("  %d                  %d                  %d\n",inteiro[i],longo[i],semsinal[i]);
+            printf("            %.2f               %.2lf\n",flutuante[i],dobro[i]);
+        }
+
+        printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
     }
 }
 #endif ex02
@@ -120,135 +122,173 @@ int main() {
 /*3 - Receba via teclado dez valores inteiros e ordene por ordem crescente assim
     que sao digitados. Guarde-os em um vetor. Mostre ao final os valores ordenados.
 */
-setlocale(LC_ALL, "Portuguese");
 
+main()
+{
+
+    setlocale(LC_ALL, "Portuguese");
+    char opcao = 's';
+    while(opcao == 's' || opcao == 'S')
+    {
+
+    int i, x, aux, v[10];
+
+    for(i = 0; i < 10 ; i++)
+    {
+        printf("Digite o valor da Posição %i: ",i+1);
+        scanf("%i",&v[i]);
+    }
+
+    for(i = 0; i < 10 ; i++)
+    {
+        for(x = i + 1; x < 10 ; x++)
+        {
+            if(v[i]>v[x]) {
+
+                aux=v[i];
+                v[i]=v[x];
+                v[x]=aux;
+            }
+        }
+    }
+
+    for(i = 0; i < 10; i++)
+    {
+        printf("\nO Valor da posição %i agora é %i", i+1,v[i]);
+    }
+
+       printf("\nTecle 's' se deseja continuar\n\n");
+            opcao = getch();
+        }
+
+}
 
 #endif ex03
 
 
 #ifdef ex04
-/*4 - Defina 2 vetores bidimensionais do tipo inteiro de 2x3. Escreva um programa
-    que recebe os dados via teclado para esses 2 vetores. Usando o operador
-    subtracao "-", subtraia os elementos de mesmo indice dos 2 vetores
-    e guarde o resultado num 3. vetor. Imprima na tela o indice, os valores e
-    o resultado dos 6 elementos dos vetores.
-*/
-main()
-{
-    setlocale(LC_ALL, "Portuguese");
-
-    char opcao = 's';
-    while(opcao == 's' || opcao == 'S')
+    /*4 - Defina 2 vetores bidimensionais do tipo inteiro de 2x3. Escreva um programa
+        que recebe os dados via teclado para esses 2 vetores. Usando o operador
+        subtracao "-", subtraia os elementos de mesmo indice dos 2 vetores
+        e guarde o resultado num 3. vetor. Imprima na tela o indice, os valores e
+        o resultado dos 6 elementos dos vetores.
+    */
+    main()
     {
+        setlocale(LC_ALL, "Portuguese");
 
-        int M, N, i, j;
-
-        printf("Quantas linhas vai ter a matriz? ");
-        scanf("%d", &M);
-
-        printf("Quantas colunas vai ter a matriz? ");
-        scanf("%d", &N);
-
-        int mat[M][N],mat1[M][N],mat2[M][N];
-
-        printf("\nDigite os valores do primeiro vetor\n");
-        for (i = 0; i < M; i++)
+        char opcao = 's';
+        while(opcao == 's' || opcao == 'S')
         {
-            for (j = 0; j < N; j++)
+
+            int M, N, i, j;
+
+            printf("Quantas linhas vai ter a matriz? ");
+            scanf("%d", &M);
+
+            printf("Quantas colunas vai ter a matriz? ");
+            scanf("%d", &N);
+
+            int mat[M][N],mat1[M][N],mat2[M][N];
+
+            printf("\nDigite os valores do primeiro vetor\n");
+            for (i = 0; i < M; i++)
             {
-                printf("Elemento [%d,%d]: ", i, j);
-                scanf("%d", &mat[i][j]);
+                for (j = 0; j < N; j++)
+                {
+                    printf("Elemento [%d,%d]: ", i, j);
+                    scanf("%d", &mat[i][j]);
+                }
             }
+
+            printf("\nDigite os valores do segundo vetor\n");
+
+            for (i = 0; i < M; i++)
+            {
+                for (j = 0; j < N; j++)
+                {
+                    printf("Elemento [%d,%d]: ", i, j);
+                    scanf("%d", &mat1[i][j]);
+                }
+            }
+
+            printf("\nMATRIZ DIGITADA:\n");
+            for (i = 0; i < M; i++)
+            {
+                for (j = 0; j < N; j++)
+                {
+                    mat2[i][j] = mat[i][j] - mat1[i][j];
+                    printf("%d ", mat2[i][j]);
+                }
+                printf("\n");
+            }
+            printf("\nTecle 's' se deseja continuar\n\n");
+            opcao = getch();
         }
 
-        printf("\nDigite os valores do segundo vetor\n");
-
-        for (i = 0; i < M; i++)
-        {
-            for (j = 0; j < N; j++)
-            {
-                printf("Elemento [%d,%d]: ", i, j);
-                scanf("%d", &mat1[i][j]);
-            }
-        }
-
-        printf("\nMATRIZ DIGITADA:\n");
-        for (i = 0; i < M; i++)
-        {
-            for (j = 0; j < N; j++)
-            {
-                mat2[i][j] = mat[i][j] - mat1[i][j];
-                printf("%d ", mat2[i][j]);
-            }
-            printf("\n");
-        }
-        printf("\nTecle 's' se deseja continuar\n\n");
-        opcao = getch();
     }
-
-}
 #endif ex04
 
 #ifdef ex05
-/*5 - Receba via teclado valores do tipo int para uma matriz 5 x 5. Receba via
-    teclado um valor x. O programa dever fazer a busca desse valor x na matriz
-    e, ao final escrever a localizacao (linha e coluna) ou uma mensagem de
-    ”nao encontrado”.
-*/
-int main(void)
-{
-
-    setlocale(LC_ALL, "Portuguese");
-
-    int i,j,valor,m[5][5];
-    char opcao = 's';
-    while(opcao == 's' || opcao == 'S')
+    /*5 - Receba via teclado valores do tipo int para uma matriz 5 x 5. Receba via
+        teclado um valor x. O programa dever fazer a busca desse valor x na matriz
+        e, ao final escrever a localizacao (linha e coluna) ou uma mensagem de
+        ”nao encontrado”.
+    */
+    int main(void)
     {
 
-        for(i=0; i<5; i++)   //faz a matriz que vai armazenar todos os valores
+        setlocale(LC_ALL, "Portuguese");
+
+        int i,j,valor,m[5][5];
+        char opcao = 's';
+        while(opcao == 's' || opcao == 'S')
         {
 
-            for(j=0; j<5; j++)
+            for(i=0; i<5; i++)   //faz a matriz que vai armazenar todos os valores
             {
 
-                printf("escreva o [%i][%i] numero:",i,j);//Primeiro tu coloca para o valor
-
-                scanf("%i",&m[i][j]);//salva
-            }
-        }
-
-        system("cls");//limpa a tela
-
-        for(i=0; i<5; i++)
-        {
-
-            for(j=0; j<5; j++)
-            {
-
-                printf("|%i",m[i][j]);//mostra a Matriz
-            }
-            printf("\n");//Esse quebra linha serve para mostrar em forma de matriz
-        }
-
-        printf("Qual valor você procura?:");//o que vai ler fora do for ou da matirz
-
-        scanf("%i",&valor);
-
-        for(i=0; i<5; i++)
-        {
-            for(j=0; j<5; j++)
-            {
-
-                if(m[i][j]==valor)   //condição dentro do for para percorrer a matriz toda
+                for(j=0; j<5; j++)
                 {
-                    printf("Esse:%i[%i][%i]",m[i][j],i,j);//mostra o resultado
+
+                    printf("escreva o [%i][%i] numero:",i,j);//Primeiro tu coloca para o valor
+
+                    scanf("%i",&m[i][j]);//salva
                 }
             }
+
+            system("cls");//limpa a tela
+
+            for(i=0; i<5; i++)
+            {
+
+                for(j=0; j<5; j++)
+                {
+
+                    printf("|%i",m[i][j]);//mostra a Matriz
+                }
+                printf("\n");//Esse quebra linha serve para mostrar em forma de matriz
+            }
+
+            printf("Qual valor você procura?:");//o que vai ler fora do for ou da matirz
+
+            scanf("%i",&valor);
+
+            for(i=0; i<5; i++)
+            {
+                for(j=0; j<5; j++)
+                {
+
+                    if(m[i][j]==valor)   //condição dentro do for para percorrer a matriz toda
+                    {
+                        printf("Esse:%i[%i][%i]",m[i][j],i,j);//mostra o resultado
+                    }
+                }
+            }
+            printf("\nNúmero não encontrado.\n");
+            printf("\nTecle 's' se deseja continuar\n\n");
+            opcao = getch();
         }
-        printf("\nNúmero não encontrado.\n");
-        printf("\nTecle 's' se deseja continuar\n\n");
-        opcao = getch();
     }
-}
 
 #endif ex05
