@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include<stdbool.h>
-#define ex01
+#define ex02
 
 #ifdef ex01
 /*1 - Faça um programa receba dois números inteiros e execute as seguintes funções:
@@ -156,7 +155,7 @@ void verificaNumero()
     vetor -> b,d,f,h,j,k,m,o,q,s,u,w,y
 */
 
-bool pesquisa(char letra, char *vetor, int tamanho);
+_Bool pesquisa(char letra, char *vetor, int tamanho);
 
 
 main(){
@@ -173,6 +172,7 @@ main(){
         puts("Digite uma letra: ");
         letra = getchar();
         puts("Resultado: ");
+
         if(pesquisa(letra,&vetor[0],sizeof(vetor)))
         {
             puts("valor encontrado");
@@ -191,7 +191,7 @@ main(){
 }
 
 
-bool pesquisa(char letra,char *vetor,int tamanho)
+_Bool pesquisa(char letra,char *vetor,int tamanho)
 {
     int i;
     for(i=0; i<tamanho; i++)
