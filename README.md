@@ -1,4 +1,4 @@
-# Exercise-in-C
+# College Exercises
 
 Exercícios do curso Análise e Desenvolvimento de Sistemas - Fatec Rubens Lara;
 </br>
