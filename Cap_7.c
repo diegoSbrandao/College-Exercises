@@ -101,15 +101,22 @@ void main()
 #ifdef ex03
 /*
 3 - Escreva um programa com a estrutura abaixo. Defina um vetor de estruturas
-    de 4 elementos. Receba os dados pelo teclado e imprima-os no video. Faça um
-    menu. (vetor de estruturas)
+    de 4 elementos. Receba os dados pelo teclado e imprima-os no video.
+    Faça um menu. (vetor de estruturas)
 		nome, end, cidade, estado, cep
 */
-
 
 main() {
 
     setlocale(LC_ALL, "Portuguese");
+
+    printf("Informações solicitadas:\n"),
+    printf("\nNome:");
+    printf("\nEndereço:");
+    printf("\nCidade:");
+    printf("\nEstado:");
+    printf("\nCep:");
+
 
     struct dados {
     char nome[20];
@@ -119,10 +126,10 @@ main() {
     int cep;
 };
 
-struct dados pessoa[2];
+struct dados pessoa[4];
 
     int i;
-    for(i=0;i<2;i++) {
+    for(i=0;i<4;i++) {
         printf("\n\nPessoa %d\n",i+1);
 
         printf("\nNome: ");
@@ -145,16 +152,11 @@ struct dados pessoa[2];
         scanf("%d",&pessoa[i].cep);
     }
 
-    for(i=0;i<2;i++) {
+    for(i=0;i<4;i++) {
         printf("\nPessoa %d\n",i+1);
-        printf("\nNome: %s\nEndereco: %s\nCidade: %s\nEstado: %s\nCEP: \n\n",
+        printf("\nNome: %s\nEndereco: %s\nCidade: %s\nEstado: %d\nCEP: \n\n",
         pessoa[i].nome,pessoa[i].ende,pessoa[i].cidade,pessoa[i].estado,pessoa[i].cep);
     }
 
-
-
-
-
 }
 #endif ex03
-
