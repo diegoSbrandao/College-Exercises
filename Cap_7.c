@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#define ex03
+#define ex01
 
 #ifdef ex01
 /*
@@ -20,6 +20,10 @@ int main()
 {
 
     setlocale(LC_ALL, "Portuguese");
+    char opcao = 's';
+
+
+
     struct reg
     {
         char c;
@@ -31,8 +35,9 @@ int main()
         unsigned int ui;
         unsigned long ul;
     };
-
     struct reg regua;
+    while(opcao == 's' || opcao == 'S')
+    {
     printf("Digite um valor para CHAR: ");
     scanf("%c",&regua.c);
     printf("\nDigite um valor para INT: ");
@@ -53,6 +58,12 @@ int main()
     printf("\n1234567890123456789012345678901234567890123456789012345678901234567890");
     printf("\n    %c         %d         %ld                   %.2f                %.2f",regua.c,regua.i,regua.l,regua.f,regua.d);
     printf("\n          %u                   %u                   %u",regua.uc,regua.ui,regua.ul);
+
+
+    printf("\n\nTecle 's' se deseja continuar\n");
+    opcao = getch();
+    }
+
 }
 
 #endif ex01
@@ -73,6 +84,7 @@ void main()
 {
 
     setlocale(LC_ALL, "Portuguese");
+    char opcao = 's';
 
     struct ponto
     {
@@ -82,6 +94,9 @@ void main()
 
     struct ponto p;
     float resultado;
+
+    while(opcao == 's' || opcao == 'S')
+    {
     printf("Informe o ponto x: \n");
     scanf("%d", &p.x);
     printf("Informe o ponto y: \n");
@@ -93,7 +108,11 @@ void main()
 
 
 
-    printf("Distancia do ponto de origem (0, 0): %.2f \n", resultado);
+    printf("Distância do ponto de origem (0, 0): %.2f \n", resultado);
+
+    printf("\n\nTecle 's' se deseja continuar\n");
+    opcao = getch();
+    }
 }
 
 #endif ex02
@@ -106,57 +125,104 @@ void main()
 		nome, end, cidade, estado, cep
 */
 
-main() {
-
-    setlocale(LC_ALL, "Portuguese");
-
-    printf("Informações solicitadas:\n"),
-    printf("\nNome:");
-    printf("\nEndereço:");
-    printf("\nCidade:");
-    printf("\nEstado:");
-    printf("\nCep:");
-
-
-    struct dados {
-    char nome[20];
-    char ende[40];
-    char cidade[20];
-    char estado[3];
-    int cep;
+struct cadastro
+{
+   char nome[20];
+   char end[30];
+   char cidade[20];
+   char estado[20];
+   char cep[9];
 };
 
-struct dados pessoa[4];
+struct cadastro cliente[4];
 
-    int i;
-    for(i=0;i<4;i++) {
-        printf("\n\nPessoa %d\n",i+1);
+void main()
+{
+   int op, i = 0, j;
 
-        printf("\nNome: ");
-        scanf("%s",&pessoa[i].nome);
-        getchar();
+   setlocale(LC_ALL, "Portuguese");
 
-        printf("\nEndereco: ");
-        scanf("%s",&pessoa[i].ende);
-        getchar();
+   while(op!=3){
 
-        printf("\nCidade: ");
-        scanf("%s",&pessoa[i].cidade);
-        getchar();
 
-        printf("\nEstado: ");
-        scanf("%s",&pessoa[i].estado);
-        getchar();
+      printf("\n\t\t     ##### MENU #####\n\n\n");
+      printf("\t\t1-Cadastrar cliente.\n\n");
+      printf("\t\t2-Lista de clientes.\n\n");
+      printf("\t\t3-Fechar programa.\n\n");
 
-        printf("\nCEP: ");
-        scanf("%d",&pessoa[i].cep);
-    }
+      printf("\n\t\tInforme a função desejada: ");
+      scanf_s("%d", &op);
 
-    for(i=0;i<4;i++) {
-        printf("\nPessoa %d\n",i+1);
-        printf("\nNome: %s\nEndereco: %s\nCidade: %s\nEstado: %d\nCEP: \n\n",
-        pessoa[i].nome,pessoa[i].ende,pessoa[i].cidade,pessoa[i].estado,pessoa[i].cep);
-    }
+      switch(op)
+      {
+         case 1:
+            system("cls");
 
+            if (i <= 3)
+            {
+                printf("\n\t\t     ##### CADASTRO DO CLIENTE #####\n\n\n");
+                getchar();
+                printf("\t\tInforme o nome do cliente: ");
+                gets(cliente[i].nome);
+                printf("\n\t\tInforme o endereço do cliente: ");
+                gets(cliente[i].end);
+                printf("\n\t\tInforme a cidade: ");
+                gets(cliente[i].cidade);
+                printf("\n\t\tInforme estado: ");
+                gets(cliente[i].estado);
+                printf("\n\t\tInforme o CEP: ");
+                gets(cliente[i].cep);
+                printf("\n\t\t");
+                i++;
+            }
+            else
+            {
+               system("cls");
+               printf("\n\t\tLista lotada!\n\n\n\t\t");
+            }
+
+            system("pause");
+            system("cls");
+            break;
+
+         case 2:
+            system("cls");
+            printf("\n\t\t     ##### DADOS DOS CLIENTES #####\n\n\n");
+
+            if (i == 0)
+            {
+                system("cls");
+                printf("\n\t\tLista vazia!\n\n\n\t\t");
+            }
+            else
+            {
+                for (j = 0; j < i; j++)
+                {
+                    printf("\n\t\tNOME: %s", cliente[j].nome);
+                    printf("\n\t\tENDEREÇO: %s", cliente[j].end);
+                    printf("\n\t\tCIDADE: %s", cliente[j].cidade);
+                    printf("\n\t\tESTADO: %s", cliente[j].estado);
+                    printf("\n\t\tCEP: %s\n", cliente[j].cep);
+                }
+            }
+            printf("\n\t\t");
+            system("pause");
+            system("cls");
+            break;
+
+         default:
+            system("cls");
+            if(op!=3){
+            printf("\n\t\tA opção informada não existe!\n\n\n\t\t");
+            system("pause");
+            system("cls");
+            break;
+            }
+            else{
+                printf("\n\t\t\PROGRAMA ENCERRADO !\n\n\t\t");
+            }
+      }
+
+   }
 }
 #endif ex03
