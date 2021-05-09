@@ -228,3 +228,139 @@ main()
 
 #endif ex7
 
+#ifdef ex8
+main()
+{
+
+    /* 8.	Faça um programa que receba o ano do nascimento de uma pessoa e o ano atual, calcule e mostre idade dessa pessoa.*/
+
+    setlocale(LC_ALL, "Portuguese");
+
+    SYSTEMTIME str_t;
+    GetSystemTime(&str_t);
+
+    int  anoNasc,anoAtua,idade, dias, ano;
+
+    do
+    {
+
+        printf("Informe seu ano de nascimento: \n");
+        scanf("%d", &anoNasc);
+        anoAtua = str_t.wYear;;
+        ano = 365;
+
+        if(anoNasc<=1900)
+        {
+            printf("Digite um número superior a 1900\n");
+        }
+
+    }
+    while(anoNasc<=1900);
+
+    idade = anoAtua-anoNasc;
+    dias = ano*idade;
+
+    printf("A sua idade é: %d\n", idade);
+    printf("Voce viveu até agora: %d\n", dias);
+
+}
+
+#endif ex8
+
+#ifdef ex9
+main()
+{
+     /*
+        9.	O custo ao consumidor de um carro novo é a soma do preço da fábrica com o percentual de lucro do distribuidor e dos impostos aplicados ao preço de fábrica. Receba via teclado o preço de fábrica de um veículo, o percentual de lucro do distribuidor e o percentual de impostos. Calcule e mostre:
+        a)	O valor correspondente ao lucro do distribuidor
+        b)	O valor correspondente aos impostos
+        c)	O preço final do veículo
+    */
+
+    setlocale(LC_ALL, "Portuguese");
+
+    int  fabrVei, lucroDis, imposto, lucroFornecedor, impostoVeicular, totalVeiculo;
+
+    do{
+    printf("Informe o preço de fábrica do veiculo R$: \n");
+    scanf("%d", &fabrVei);
+
+    printf("Informe o percentual de lucro do distribuidor : \n");
+    scanf("%d", &lucroDis);
+
+    printf("Informe o percentual de impostos : \n");
+    scanf("%d", &imposto);
+
+    if(fabrVei<=0){
+        printf("O valor do preço de fábrica deve ser maior que zero\n");
+    }
+     else if(lucroDis<=0){
+        printf("O valor do percentual de lucro do distribuidor deve ser maior que zero\n");
+    }
+    else if(imposto<=0){
+        printf("O valor do imposto deve ser maior que zero\n");
+    }
+
+    }while(fabrVei<=0 || lucroDis<=0 || imposto<=0);
+
+    lucroFornecedor = fabrVei * lucroDis / 100;
+    impostoVeicular = fabrVei * imposto / 100;
+    totalVeiculo = fabrVei + lucroFornecedor + impostoVeicular;
+
+    printf("O valor correspondente ao lucro do distribuidor é R$: %d\n", lucroFornecedor);
+    printf("O valor correspondente aos impostos é R$: %d\n", impostoVeicular);
+    printf("O preço final do veículo é R$: %d", totalVeiculo);
+
+
+}
+
+#endif ex9
+
+#ifdef ex10
+main()
+{
+    /*
+
+    10.	Elabore um programa que efetue o cálculo do reajuste de salário de um funcionário.
+    Considere que o funcionário deve receber um reajuste de 15% caso seu salário seja menor que 800 reais.
+    Se o salário for maior ou igual a 800 e menor ou igual a 1000, seu reajuste será de 10 %;
+    caso seja maior que 1000, o reajuste deve ser de 5%.
+    Ao final do programa deve apresentar o valor antigo e o novo salário.
+
+    */
+    setlocale(LC_ALL, "Portuguese");
+
+    int  salar,novoSalar;
+    double reaj;
+    do{
+    printf("Digite seu salário R$: \n");
+    scanf("%d", &salar);
+
+    if(salar<=0){
+        printf("O valor do salário deve ser maior que zero\n");
+    }
+
+    }while(salar<=0);
+
+   if(salar<800){
+    reaj = 0.15;
+    novoSalar = salar * reaj + salar;
+    printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+   }
+
+   else if(salar>=800 && salar<=1000){
+    reaj = 0.10;
+    novoSalar = salar * reaj + salar;
+   printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+   }
+
+   else if(salar>1000){
+    reaj = 0.05;
+    novoSalar = salar * reaj + salar;
+   printf("Seu antigo salário era %d agora seu novo salário é %d",salar,novoSalar);
+   }
+
+}
+
+#endif ex10
+
