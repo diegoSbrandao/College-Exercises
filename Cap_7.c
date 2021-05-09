@@ -62,6 +62,7 @@ int main()
 
     printf("\n\nTecle 's' se deseja continuar\n");
     opcao = getch();
+    getchar();
     }
 
 }
