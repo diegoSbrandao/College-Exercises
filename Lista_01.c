@@ -364,3 +364,98 @@ main()
 
 #endif ex10
 
+#ifdef ex11
+main()
+{
+    /*
+        11.	Receba dois números, o primeiro deve ser maior que 10 e menor que 25,
+        o segundo deve ser maior ou igual a zero,
+        o terceiro deve ser a soma dos dois primeiros e
+        o quarto é o produto dos três números anteriores.
+        Calcule e exiba a soma dos quadrados de cada um dos quatro números.
+        Caso o resultado seja menor que 50000, solicite novos dados.
+    */
+    setlocale(LC_ALL, "Portuguese");
+
+    int a,b,c,d,quadrado;
+
+    do{
+
+        do{
+        printf("Digite 2 números\n");
+        scanf("%d" "%d", &a,&b);
+
+        if (a<= 10 || a>=25 ){
+            printf("O primeiro dígito deve ser mais que 10 e menor que 25.\n");
+        }
+        else if (b<0){
+            printf("O segundo dígito deve ser mais que 0 ou igual a zero.\n");
+        }
+
+        }while(a<= 10 || a>=25 || b<0);
+
+      c= a+b;
+      d= a*b*c;
+
+      quadrado = pow(a,2) + pow(b,2) + pow(c,2) + pow(d,2);
+      if (quadrado <=50000){
+        printf("Digite novos números\n\n");
+      }
+      else{
+      printf("A soma dos quadrados é:%d\n ",quadrado);
+      }
+      }while(quadrado <=50000);
+}
+
+#endif ex11
+
+#ifdef ex12
+main()
+{
+    /*
+        12.	Leia quatro valores referentes às notas escolares de um aluno
+        e exiba uma mensagem dizendo que ele foi aprovado se a média for maior ou igual a 5.
+        Caso contrário informe que ele está reprovado.
+        Apresente junto à mensagem o valor da média obtida pelo aluno independente de ter sido aprovado ou não.
+        As notas deverão ser maiores ou iguais a zero e menores ou iguais a dez.
+    */
+
+    setlocale(LC_ALL, "Portuguese");
+
+    int a,b,c,d,media;
+
+        do{
+
+        printf("Digite suas notas:\n");
+        scanf("%d" "%d" "%d" "%d", &a,&b,&c,&d);
+
+        if (a<0 || a>=11){
+            printf("A primeira nota foi digitada errada.\n");
+        }
+        else if (b<0 || b>=11){
+            printf("A segunda nota foi digitada errada.\n");
+        }
+        else if (c<0 || c>=11){
+            printf("A terceira nota foi digitada errada.\n");
+        }
+        else if (d<0 || d>=11){
+            printf("A quarta nota foi digitada errada.\n");
+        }
+
+        }while((a<0 || a>=11) || (b<0 || b>=11) || (c<0 || c>=11) || (d<0 || d>=11));
+
+
+     media = (a+b+c+d) / 4;
+
+     if(media>=5){
+        printf("Você foi aprovado sua média é: %d\n",media);
+     }
+     else{
+        printf("Você foi reprovado sua média é: %d\n",media);
+     }
+
+}
+
+#endif ex12
+
+
