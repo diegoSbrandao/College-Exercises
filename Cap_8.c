@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include<stdbool.h>
-#define ex01
+
+#define ex06
 
 #ifdef ex01
 
@@ -438,6 +438,11 @@ main()
     int bissexto=0;
     int contaAnos=0;
     int somaAnos =0;
+    char opcao = 's';
+
+    while(opcao == 's' || opcao == 'S')
+    {
+
 
 
     for(int i=0; i<2; i++)          //Laço de repetição usado para coletar os dados.
@@ -858,6 +863,12 @@ main()
         printf("\t\t\t\t ###############################################\n\n");
 
         system("pause");
+
+         printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+
+
+    }
 
 }
 
