@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define ex01 //1ok , 3ok, 5ok, 6ok, != FALTA: 2 e 4
+#define ex06 //1ok , 3ok, 5ok, 6ok, != FALTA: 2 e 4
 
 #ifdef ex01
 void recepcao();
@@ -311,9 +311,9 @@ int checarNome(char *nome, struct dados *pessoas);
 
 main() {
     int i, op; //             nome, end, cidade, estado, cep
-    struct dados pessoas[3] = {"Leonardo","Avenida Central","Sao Vicente","sp","11348000",
-                               "Amanda","Rua Bartolomeu","Sao Vicente","sp","11399000",
-                               "Cristina","Avenida Goias","Sao Paulo","sp","11247000"};
+    struct dados pessoas[3] = {"Diego Brandao","Rua Irineu","Santos","sp","11029000",
+                               "Lucas braga","Rua Joaquim","Santos","sp","11029000",
+                               "Lucas caldas","Avenida Brasil","Santos","sp","11087000"};
     do {
         printf("\nEscolha uma opcao:\n1 - Inserir dados\n2 - Exibir dados \n3 - Procurar\n4 - Alterar\n5 - Excluir\n6 - Sair.\n-->");
         scanf("%d",&op);
