@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define ex06 //1ok , 3ok, 5ok, 6ok, != FALTA: 2 e 4
+#define ex01
 
 #ifdef ex01
 void recepcao();
@@ -30,15 +30,15 @@ main()
     char opcao = 's';
     while(opcao == 's' || opcao == 'S')
     {
-    recepcao();
+        recepcao();
 
 
 
 
 
-    printf("\nTecle 's' se deseja continuar\n\n");
-    opcao = getch();
-    getchar();
+        printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+        getchar();
 
 
     }
@@ -97,8 +97,112 @@ void exibicao(char *pc, int *pi, long int *pl, unsigned *pu, float *pf, double *
 #endif
 
 #ifdef ex02
+/*
+    2 - Escreva um programa que receba n valores via teclado, receba também a operação a ser executada.
+
+        Quando for digitado "=" o programa deve mostrar o resultado acumulado dos n valores.
+
+        As operações aritmeticas e a entrada de dados devem ser funções que recebe os valores usando ponteiros.
+
+*/
+
+int soma(int x, int y);
+int subt(int x, int y);
+int multi(int x, int y);
+float divis(int x, int y);
+
+main()
+{
+
+    setlocale(LC_ALL, "Portuguese");
+
+    int num1, num2, res = 0;
+    int *numA,*numB, *resultado;
+    numA = &num1;
+    numB = &num2;
+    resultado = &res;
+
+    char op;
+    char *pont;
+    pont = &op;
 
 
+    char opcao = 's';
+
+    while(opcao == 's' || opcao == 'S')
+    {
+
+        printf("Digite um numero: ");
+        scanf("%d",&numA);
+
+        do
+        {
+            printf("\nDigite a operação escolhida:");
+            printf("\nSoma(+): ");
+            printf("\nSubtração(-): ");
+            printf("\nDivisão(/): ");
+            printf("\nMultiplicação(*):\n");
+            op = _getche();
+            if(op == '=')
+            {
+                break;
+            }
+            printf("\nDigite outro numero: ");
+            scanf("%d",&numB);
+            system("clear||cls");//comando para limpar a tela.
+
+            switch(op)
+            {
+            case '+':
+                res += soma(numA,numB);
+                printf("\nSe deseja parar digite o símbolo de igual (=)");
+                break;
+            case '-':
+                res -= subt(numA,numB);
+                printf("\nSe deseja parar digite o símbolo de igual (=)");
+                break;
+            case '*':
+                res *= multi(numA,numB);
+                printf("\nSe deseja parar digite o símbolo de igual (=)");
+                break;
+            case '/':
+                res /= (int) divis(numA,numB);
+                printf("\nSe deseja parar digite o símbolo de igual (=)");
+                break;
+            }
+            num1 = res;
+            printf("\n\n");
+        }
+        while(1==1);
+        resultado = res;
+        printf("\nUltimo resultado: %d", resultado);
+        printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+
+    }
+
+}
+
+//Funções
+int soma(int x, int y)
+{
+    return x + y;
+}
+
+int subt(int x, int y)
+{
+    return x - y;
+}
+
+int multi(int x, int y)
+{
+    return x * y;
+}
+
+float divis(int x, int y)
+{
+    return (float) x / (float) y;
+}
 
 #endif
 
@@ -173,26 +277,101 @@ _Bool pesquisa(char letra,char *vetor,int tamanho)
 
 #ifdef ex04
 
-main()
+/*
+    4 - Escreva um programa que receba em 1 funcao 2 strings de ate' 10 caracteres.
+        Os vetores sao declaradas como variavel local na função main().
+
+        Escreva uma funcao que recebe as 2 strings como parametros usando ponteiros
+        e compare estas 2 strings.
+
+        Retorne como resultado da comparacao
+        0 se forem DIFERENTES,
+        1 se forem IGUAIS,
+        2 se a string 1 for maior que a string 2,
+        3 se a string 2 for maior que a string 1 e
+        4 se as string tem tamanhos iguais mas são diferentes.
+
+*/
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    char C;
+    char opcao = 's';
+
+    while(opcao == 's' || opcao == 'S')
+    {
+
+        int stringsIguais(char s1[], char s2[]);
+
+        char s1[10];
+        char s2[10];
+        char *p1;
+        char *p2;
+
+        printf("Digite alguma palavra(max de 10 caracteres): ");
+        scanf("%s", &s1);
+        printf("Digite outra palavra (max de 10 caracteres): ");
+        scanf("%s", &s2);
+
+        p1=&s1;
+        p2=&s2;
+
+        stringsIguais(p1,p2);  //ponteiros sendo usados como parametros.
+
+        printf("\nTecle 's' se deseja continuar\n\n");
+        opcao = getch();
+    }
+}
+
+int stringsIguais(char str1[], char str2[])
 {
 
-    /*
-        4 - Escreva um programa que receba em 1 funcao 2 strings de ate' 10 caracteres.
-    Os vetores sao declaradas como variavel local na função main().
-    Escreva uma funcao que recebe as 2 strings como parametros usando ponteiros
-    e compare estas 2 strings.
-    Retorne como resultado da comparacao 0 se forem DIFERENTES, 1 se forem
-    IGUAIS, 2 se a string 1 for maior que a string 2, 3 se a string 2 for maior
-    que a string 1 e 4 se as string tem tamanhos iguais mas são diferentes.
+    int i = 0;
+    int igual = 0;
+    int x=0,y=0;
 
-    */
+    while (str1[i] != '\0' || str2[i] != '\0')  //Verificar igual das strings
+    {
+        if (str1[i] == str2[i])
+        {
+            igual++;
+        }
+        i++;
 
-    setlocale(LC_ALL, "Portuguese");
+    }
+
+    for(int j =0; str1[j] != '\0';j++){   //Verificar tamanho das strings
+        x++;
+    }
+
+    for(int k=0; str2[k] != '\0'; k++){
+         y++;
+    }
+
+
+    if(x==y && igual==i)        //Selecionando conforme pedido no enunciado
+    {
+        printf("1");
+    }
+
+    else if(x > y)
+    {
+        printf("0 e 2");
+    }
+
+    else if(x < y)
+    {
+        printf("0 e 3");
+    }
+    else{
+        printf("4");
+    }
+
 
 
 }
-
-
 
 #endif
 
@@ -294,7 +473,8 @@ void exibicao( struct dados *pessoas)
 
 */
 
-struct dados {
+struct dados
+{
     char nome[40];
     char end[40];
     char cidade[40];
@@ -309,35 +489,47 @@ void alterar(struct dados *pessoas);
 void excluir(struct dados *pessoas);
 int checarNome(char *nome, struct dados *pessoas);
 
-main() {
+main()
+{
     int i, op; //             nome, end, cidade, estado, cep
     struct dados pessoas[3] = {"Diego Brandao","Rua Irineu","Santos","sp","11029000",
                                "Lucas braga","Rua Joaquim","Santos","sp","11029000",
                                "Lucas caldas","Avenida Brasil","Santos","sp","11087000"};
-    do {
+    do
+    {
         printf("\nEscolha uma opcao:\n1 - Inserir dados\n2 - Exibir dados \n3 - Procurar\n4 - Alterar\n5 - Excluir\n6 - Sair.\n-->");
         scanf("%d",&op);
         getchar();
-        switch(op) {
-            case 1: recepcao(pessoas);
+        switch(op)
+        {
+        case 1:
+            recepcao(pessoas);
             break;
-            case 2: exibicao(pessoas);
+        case 2:
+            exibicao(pessoas);
             break;
-            case 3: procurar(pessoas);
+        case 3:
+            procurar(pessoas);
             break;
-            case 4: alterar(pessoas);
+        case 4:
+            alterar(pessoas);
             break;
-            case 5: excluir(pessoas);
+        case 5:
+            excluir(pessoas);
             break;
-            case 6: printf("\nEncerrando...\n");
+        case 6:
+            printf("\nEncerrando...\n");
             break;
         }
-    } while(op != 6);
+    }
+    while(op != 6);
 }
 
-void recepcao(struct dados *pessoas) {
+void recepcao(struct dados *pessoas)
+{
     int i;
-    for(i=0; i<3; i++) {
+    for(i=0; i<3; i++)
+    {
         puts("Digite seu nome: ");
         gets(pessoas[i].nome);
         puts("Digite seu endereco: ");
@@ -352,9 +544,11 @@ void recepcao(struct dados *pessoas) {
     }
 }
 
-void exibicao(struct dados *pessoas) {
+void exibicao(struct dados *pessoas)
+{
     int i;
-    for(i=0;i<3;i++) {
+    for(i=0; i<3; i++)
+    {
         printf("\n");
         printf("Nome: %s\n",pessoas[i].nome);
         printf("Endereco: %s\n",pessoas[i].end);
@@ -364,24 +558,28 @@ void exibicao(struct dados *pessoas) {
     }
 }
 
-void procurar(struct dados *pessoas) {
+void procurar(struct dados *pessoas)
+{
     int i;
     char nome[40];
     puts("Digite o nome: ");
     gets(nome);
     i = checarNome(nome, pessoas);
-    if(i >= 0){
+    if(i >= 0)
+    {
         printf("\nNome: %s\nEndereco: %s\nCidade: %s\nEstado: %s\nCep: %s\n", pessoas[i].nome,pessoas[i].end,pessoas[i].cidade,pessoas[i].estado,pessoas[i].cep);
     }
 }
 
-void alterar(struct dados *pessoas) {
+void alterar(struct dados *pessoas)
+{
     int i;
     char nome[40];
     puts("Digite o nome: ");
     gets(nome);
     i = checarNome(nome, pessoas);
-    if(i >= 0) {
+    if(i >= 0)
+    {
         puts("Digite seu novo nome: ");
         gets(pessoas[i].nome);
         puts("Digite seu novo endereco: ");
@@ -396,13 +594,15 @@ void alterar(struct dados *pessoas) {
     }
 }
 
-void excluir(struct dados *pessoas) {
+void excluir(struct dados *pessoas)
+{
     int i, j;
     char nome[40];
     puts("Digite o nome: ");
     gets(nome);
     i = checarNome(nome, pessoas);
-    if(i >= 0) {
+    if(i >= 0)
+    {
         strcpy(pessoas[i].nome,"");
         strcpy(pessoas[i].end,"");
         strcpy(pessoas[i].cidade,"");
@@ -412,19 +612,27 @@ void excluir(struct dados *pessoas) {
     }
 }
 
-int checarNome(char *nome, struct dados *pessoas) {
+int checarNome(char *nome, struct dados *pessoas)
+{
     int i,j,c = 0;
-    for(i=0; i<3; i++) {
-        if(strlen(nome)==strlen(pessoas[i].nome)) {
-            for(j=0; j<strlen(nome); j++) {
-                if(nome[j]==pessoas[i].nome[j]) {
+    for(i=0; i<3; i++)
+    {
+        if(strlen(nome)==strlen(pessoas[i].nome))
+        {
+            for(j=0; j<strlen(nome); j++)
+            {
+                if(nome[j]==pessoas[i].nome[j])
+                {
                     c++;
                 }
             }
-            if(c == strlen(pessoas[i].nome)) {
+            if(c == strlen(pessoas[i].nome))
+            {
                 puts("Nome encontrado!");
                 return i;
-            } else {
+            }
+            else
+            {
                 c = 0;
             }
         }

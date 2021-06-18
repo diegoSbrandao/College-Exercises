@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define ex06
+#define ex01
 
 #ifdef ex01
 
