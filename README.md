@@ -7,7 +7,7 @@ Atividades e exercícios do curso Análise e Desenvolvimento de Sistemas - Fatec
 
 <details>
   <summary>Exercícios em Linguagem C</summary>
-  <a href= "https://github.com/DSB88/College-Exercises/tree/main/Exerc%C3%ADcios_Linguagem_C"> <B> Lista </B> </a>
+  <a href= "https://github.com/DSB88/College-Exercises/tree/main/Exerc%C3%ADcios_Linguagem_C"> <B> Lista de Exercícios </B> </a>
 </details>
 
 <details>
