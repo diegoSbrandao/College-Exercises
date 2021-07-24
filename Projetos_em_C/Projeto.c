@@ -4,34 +4,34 @@
 
 /*      PROGRAMA  DESAFIO 2.
 
-1 - Escreva um programa que tem a estrutura de dados abaixo. O programa tem as seguintes opÁıes de menu:
+1 - Escreva um programa que tem a estrutura de dados abaixo. O programa tem as seguintes op√ß√µes de menu:
 
-   1 ñ entrada dados.
-   2 ñ lista todos os dados na tela.
-   3 ñ pesquisar um registro pelo nome completo.
-   4 ñ pesquisar por endereÁo completo
-   5 ñ pesquisar os aniversariantes de um determinado mÍs.
-   6 ñ pesquisar por faixa salarial
-   7 - altera valor do sal·rio, pesquisado pelo nome completo
-   8 ñ altera dados, pesquisado pelo nome completo.
-   9 ñ exclui dados, pesquisado pelo nome completo.
-   10 ñ saÌda pelo usu·rio
+   1 ‚Äì entrada dados.
+   2 ‚Äì lista todos os dados na tela.
+   3 ‚Äì pesquisar um registro pelo nome completo.
+   4 ‚Äì pesquisar por endere√ßo completo
+   5 ‚Äì pesquisar os aniversariantes de um determinado m√™s.
+   6 ‚Äì pesquisar por faixa salarial
+   7 - altera valor do sal√°rio, pesquisado pelo nome completo
+   8 ‚Äì altera dados, pesquisado pelo nome completo.
+   9 ‚Äì exclui dados, pesquisado pelo nome completo.
+   10 ‚Äì sa√≠da pelo usu√°rio
 
-Estrutura: nome, endereÁo, data de nascimento, sal·rio.
+Estrutura: nome, endere√ßo, data de nascimento, sal√°rio.
 
-A ˙nica estrutura de dados do programa deve ser vari·vel local na funÁ„o main().
+A √∫nica estrutura de dados do programa deve ser vari√°vel local na fun√ß√£o main().
 
-Portanto a passagem da estrutura para as funÁıes utiliza ponteiro.
+Portanto a passagem da estrutura para as fun√ß√µes utiliza ponteiro.
 
-Cada uma das opÁıes do menu È uma funÁ„o no programa.
+Cada uma das op√ß√µes do menu √© uma fun√ß√£o no programa.
 
-Todas as operaÁıes devem ser feitas direto no arquivo. (utilize a funÁ„o fseek).
+Todas as opera√ß√µes devem ser feitas direto no arquivo. (utilize a fun√ß√£o fseek).
 
-O programa tem um ˙nico arquivo de dados. N„o pode usar nenhum arquivo auxiliar.
+O programa tem um √∫nico arquivo de dados. N√£o pode usar nenhum arquivo auxiliar.
 
-O programa deve ser finalizado pelo usu·rio.
+O programa deve ser finalizado pelo usu√°rio.
 
-N„o pode usar nenhuma funÁ„o de biblioteca. Somente as funÁıes de manipulaÁ„o de arquivos.
+N√£o pode usar nenhuma fun√ß√£o de biblioteca. Somente as fun√ß√µes de manipula√ß√£o de arquivos.
 
 */
 
@@ -68,9 +68,9 @@ main()
 
     printf("\n");
     printf("**********************************************************************\n");
-    printf("*               DESAFIO 2 - LINGUAGEM 'C' - PROF∫ RUI                *\n");
+    printf("*               DESAFIO 2 - LINGUAGEM 'C' - PROF¬∫ RUI                *\n");
     printf("*                         -    GRUPO 04    -                         *\n");
-    printf("*                    - DIEGO DE SOUSA BRAND√O -  *\n");
+    printf("*                    - DIEGO DE SOUSA BRAND√ÉO -                      *\n");
     printf("**********************************************************************\n");
 
 
@@ -82,18 +82,18 @@ main()
         printf("\t01. Entrada de Dados\n");
         printf("\t02. Listagem de Dados\n");
         printf("\t03. Pesquisar um registro pelo nome completo\n");
-        printf("\t04. Pesquisar por endereÁo completo\n");
-        printf("\t05. Pesquisar os aniversariantes do mÍs, digite o mÍs desejado: \n");
+        printf("\t04. Pesquisar por endere√ßo completo\n");
+        printf("\t05. Pesquisar os aniversariantes do m√™s, digite o m√™s desejado: \n");
         printf("\t06. Pesquisar por faixa salarial\n");
-        printf("\t07. Alterar valor do sal·rio, pesquisado pelo nome completo\n");
+        printf("\t07. Alterar valor do sal√°rio, pesquisado pelo nome completo\n");
         printf("\t08. Alterar dados, pesquisado pelo nome completo.\n");
         printf("\t09. Exclui dados, pesquisado pelo nome completo.\n");
-        printf("\t10. SaÌda pelo usu·rio\n");
+        printf("\t10. Sa√≠da pelo usu√°rio\n");
         printf("\n");
         system("color 1E");
 
 
-        printf("Selecione uma opÁ„o: ");
+        printf("Selecione uma op√ß√£o: ");
         scanf("%d",&op);
         getchar();
 
@@ -135,8 +135,8 @@ main()
             system("cls");
             system("color 4F");
             printf("\n\n\t\t\t\t****************************");
-            printf("\n\t\t\t\t\tOpÁ„o Inv·lida!\n");
-            printf("\t\t\t\tPor favor, digite outra opÁ„o.\n");
+            printf("\n\t\t\t\t\tOp√ß√£o Inv√°lida!\n");
+            printf("\t\t\t\tPor favor, digite outra op√ß√£o.\n");
             printf("\t\t\t\t****************************\n\n");
         }
 
@@ -157,13 +157,13 @@ void inserir(struct dados *p, FILE *KP)
     printf("\n\t\tInsira seu nome: ");
     gets(p->nome);
 
-    printf("\n\t\tInsira seu endereÁo: ");
+    printf("\n\t\tInsira seu endere√ßo: ");
     gets(p->endereco);
 
-    printf("\n\t\tInsira seu mÍs de nascimento (DD/MM/AAAA): ");
+    printf("\n\t\tInsira seu m√™s de nascimento (DD/MM/AAAA): ");
     gets(p->dataNascimento);
 
-    printf("\n\t\tInsira seu sal·rio: ");
+    printf("\n\t\tInsira seu sal√°rio: ");
     scanf("%lf",&p->salario);
 
     fwrite(p,sizeof(*p),1,KP);
@@ -193,13 +193,13 @@ void listar(struct dados *p, FILE *KP)
 
 
 
-        printf("\n\n\t\t\%c%c%c%c%c LISTAGEM FUNCION¡RIOS %c%c%c%c%c \n\n",4,4,4,4,4,4,4,4,4,4);
+        printf("\n\n\t\t\%c%c%c%c%c LISTAGEM FUNCION√ÅRIOS %c%c%c%c%c \n\n",4,4,4,4,4,4,4,4,4,4);
 
 
 
         printf("\n\t\t _________________________________________________________________________________");
         printf("\n\t\t|                   |                     |                    |                  |");
-        printf("\n\t\t|       NOME        |      ENDERE«O       |   M S ANIVERS¡RIO  |     SAL¡RIO      |");
+        printf("\n\t\t|       NOME        |      ENDERE√áO       |   M√äS ANIVERS√ÅRIO  |     SAL√ÅRIO      |");
         printf("\n\t\t|___________________|_____________________|____________________|__________________|");
 
 
@@ -251,9 +251,9 @@ int pesquisarNome(struct dados *p, FILE *KP)
     {
         system("cls");
 
-        printf("\n\n\t\t\t%c%c%c PESQUISAR NOME DE FUNCION¡RIO %c%c%c\n\n",4,4,4,4,4,4);
+        printf("\n\n\t\t\t%c%c%c PESQUISAR NOME DE FUNCION√ÅRIO %c%c%c\n\n",4,4,4,4,4,4);
 
-        printf("\n\t\tInsira o nome do funcion·rio: ");
+        printf("\n\t\tInsira o nome do funcion√°rio: ");
         gets(pesq);
 
         while(1)
@@ -280,7 +280,7 @@ int pesquisarNome(struct dados *p, FILE *KP)
 
                     printf("\n\t\t _________________________________________________________________________________");
                     printf("\n\t\t|                   |                     |                    |                  |");
-                    printf("\n\t\t|       NOME        |      ENDERE«O       |   M S ANIVERS¡RIO  |     SAL¡RIO      |");
+                    printf("\n\t\t|       NOME        |      ENDERE√áO       |   M√äS ANIVERS√ÅRIO  |     SAL√ÅRIO      |");
                     printf("\n\t\t|___________________|_____________________|____________________|__________________|");
                     printf("\n            %18s %26s %14s %20.2lf\n\n", p->nome, p->endereco, p->dataNascimento, p->salario);
 
@@ -296,7 +296,7 @@ int pesquisarNome(struct dados *p, FILE *KP)
         }
         system("cls");
         system("color 02");
-        printf("\n\n\n\t\t\t\tFUNCION¡RIO N√O ENCONTRADO!\n");
+        printf("\n\n\n\t\t\t\tFUNCION√ÅRIO N√ÉO ENCONTRADO!\n");
         fclose(KP);
 
         return (-1);
@@ -324,9 +324,9 @@ int pesquisarEndereco(struct dados *p, FILE *KP)
     {
         system("cls");
 
-        printf("\n\n\t\t\t%c%c%c PESQUISAR ENDERE«O DE FUNCION¡RIO %c%c%c\n\n",4,4,4,4,4,4);
+        printf("\n\n\t\t\t%c%c%c PESQUISAR ENDERE√áO DE FUNCION√ÅRIO %c%c%c\n\n",4,4,4,4,4,4);
 
-        printf("\n\t\tInsira o endereÁo do funcion·rio: ");
+        printf("\n\t\tInsira o endere√ßo do funcion√°rio: ");
         gets(pesq);
 
       while(1)
@@ -351,7 +351,7 @@ int pesquisarEndereco(struct dados *p, FILE *KP)
                   {
                     printf("\n\t\t _________________________________________________________________________________");
                     printf("\n\t\t|                   |                     |                    |                  |");
-                    printf("\n\t\t|       NOME        |      ENDERE«O       |   M S ANIVERS¡RIO  |     SAL¡RIO      |");
+                    printf("\n\t\t|       NOME        |      ENDERE√áO       |   M√äS ANIVERS√ÅRIO  |     SAL√ÅRIO      |");
                     printf("\n\t\t|___________________|_____________________|____________________|__________________|");
 
                      cont++;
@@ -373,7 +373,7 @@ int pesquisarEndereco(struct dados *p, FILE *KP)
 
       if(cont == 0)
       {
-          printf("\n\n\n\t\t\t\tENDERE«O N√O ENCONTRADO!\n");
+          printf("\n\n\n\t\t\t\tENDERE√áO N√ÉO ENCONTRADO!\n");
       }
    }
 }
@@ -398,9 +398,9 @@ int pesquisarNiver(struct dados *p, FILE *KP)
     {
         system("cls");
 
-        printf("\n\n\t\t\t%c%c%c PESQUISAR ANIVERSARIANTES DO M S %c%c%c\n\n",4,4,4,4,4,4);
+        printf("\n\n\t\t\t%c%c%c PESQUISAR ANIVERSARIANTES DO M√äS %c%c%c\n\n",4,4,4,4,4,4);
 
-        printf("\n\t\tInsira o mÍs desejado (MM): ");
+        printf("\n\t\tInsira o m√™s desejado (MM): ");
         gets(niverMes);
 
         while(1)
@@ -418,7 +418,7 @@ int pesquisarNiver(struct dados *p, FILE *KP)
                         {
                             printf("\n\t\t _________________________________________________________________________________");
                             printf("\n\t\t|                   |                     |                    |                  |");
-                            printf("\n\t\t|       NOME        |      ENDERE«O       |   M S ANIVERS¡RIO  |     SAL¡RIO      |");
+                            printf("\n\t\t|       NOME        |      ENDERE√áO       |   M√äS ANIVERS√ÅRIO  |     SAL√ÅRIO      |");
                             printf("\n\t\t|___________________|_____________________|____________________|__________________|");
 
                             cont++;
@@ -445,7 +445,7 @@ int pesquisarNiver(struct dados *p, FILE *KP)
         {
             system("cls");
             system("color 02");
-            printf("\n\n\n\t\t\t\tN√O H¡ ANIVERSARIANTES NESTE M S!\n");
+            printf("\n\n\n\t\t\t\tN√ÉO H√Å ANIVERSARIANTES NESTE M√äS!\n");
 
         }
     }
@@ -473,9 +473,9 @@ int pesquisarSalario(struct dados *p, FILE *KP)
 
         printf("\n\n\t\t\t%c%c%c PESQUISAR FAIXA SALARIAL %c%c%c\n\n",4,4,4,4,4,4);
 
-        printf("\n\t\tInsira o valor mÌnimo: ");
+        printf("\n\t\tInsira o valor m√≠nimo: ");
         scanf("%lf",&valorA);
-        printf("\n\t\tInsira o valor m·ximo: ");
+        printf("\n\t\tInsira o valor m√°ximo: ");
         scanf("%lf",&valorB);
 
         while(1)
@@ -493,7 +493,7 @@ int pesquisarSalario(struct dados *p, FILE *KP)
                         {
                             printf("\n\t\t _________________________________________________________________________________");
                             printf("\n\t\t|                   |                     |                    |                  |");
-                            printf("\n\t\t|       NOME        |      ENDERE«O       |   M S ANIVERS¡RIO  |     SAL¡RIO      |");
+                            printf("\n\t\t|       NOME        |      ENDERE√áO       |   M√äS ANIVERS√ÅRIO  |     SAL√ÅRIO      |");
                             printf("\n\t\t|___________________|_____________________|____________________|__________________|");
 
                             cont++;
@@ -520,7 +520,7 @@ int pesquisarSalario(struct dados *p, FILE *KP)
         {
             system("cls");
             system("color 02");
-            printf("\n\n\n\t\t\t\tN√O H¡ SAL¡RIOS NESTA FAIXA!\n");
+            printf("\n\n\n\t\t\t\tN√ÉO H√Å SAL√ÅRIOS NESTA FAIXA!\n");
 
         }
     }
@@ -557,7 +557,7 @@ void alterarSalario(struct dados *p, FILE *KP)
         else
         {
 
-            printf("\n\n\t\tInsira o novo sal·rio: ");
+            printf("\n\n\t\tInsira o novo sal√°rio: ");
             scanf("%lf",&p->salario);
 
             KP = fopen("funcionarios.txt","r+");
@@ -611,13 +611,13 @@ void alterarDados(struct dados *p, FILE *KP)
             printf("\n\t\tInsira seu nome: ");
             gets(p->nome);
 
-            printf("\n\t\tInsira seu endereÁo: ");
+            printf("\n\t\tInsira seu endere√ßo: ");
             gets(p->endereco);
 
-            printf("\n\t\tInsira seu mÍs de nascimento (DD/MM/AAAA): ");
+            printf("\n\t\tInsira seu m√™s de nascimento (DD/MM/AAAA): ");
             gets(p->dataNascimento);
 
-            printf("\n\n\t\tInsira o novo sal·rio: ");
+            printf("\n\n\t\tInsira o novo sal√°rio: ");
             scanf("%lf",&p->salario);
 
             KP = fopen("funcionarios.txt","r+");
@@ -677,7 +677,7 @@ void excluir(struct dados *p, FILE *KP)
 
             fclose(KP);
 
-            printf("\n\t\t\t***** DADOS DO FUNCION¡RIO EXCLUÕDOS *****\n\n");
+            printf("\n\t\t\t***** DADOS DO FUNCION√ÅRIO EXCLU√çDOS *****\n\n");
 
             printf("\n\n\t\t");
         }
